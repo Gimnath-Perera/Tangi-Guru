@@ -1,7 +1,7 @@
 {
-  "name": "lush-server",
+  "name": "tangiguru-server",
   "version": "1.0.0",
-  "description": "Server side application of Ondemand application",
+  "description": "Server of TangiGuru",
   "bin": "bin/createNodejsApp.js",
   "main": "src/index.js",
   "repository": "",
