@@ -78,7 +78,6 @@ const Login = () => {
   return (
     <Box
       sx={{
-        backgroundColor: '#fff',
         display: 'flex',
         flexDirection: 'column',
         height: '100%',
@@ -122,6 +121,7 @@ const Login = () => {
                 type="email"
                 value={values.email}
                 variant="outlined"
+                sx={{ background: '#fff' }}
               />
               <TextField
                 error={Boolean(touched.password && errors.password)}
@@ -135,6 +135,7 @@ const Login = () => {
                 type={showPassword ? 'text' : 'password'}
                 value={values.password}
                 variant="outlined"
+                sx={{ background: '#fff' }}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position="end">
