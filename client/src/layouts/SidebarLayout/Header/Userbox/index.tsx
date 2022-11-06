@@ -84,14 +84,11 @@ const HeaderUserbox = () => {
       <UserBoxButton color="secondary" ref={ref} onClick={handleOpen}>
         <Avatar
           variant="rounded"
-          {...stringAvatar(
-            `${currentUser?.firstName} ${currentUser?.lastName}`
-          )}
+          {...stringAvatar(`${currentUser?.fullName}`)}
         />
         <Hidden mdDown>
           <UserBoxText>
-            <UserBoxLabel variant="body1">{`${currentUser?.firstName} ${currentUser?.lastName}`}</UserBoxLabel>
-            <UserBoxDescription variant="body2">{'Admin'}</UserBoxDescription>
+            <UserBoxLabel variant="body1">{`${currentUser?.fullName}`}</UserBoxLabel>
           </UserBoxText>
         </Hidden>
         <Hidden smDown>
@@ -114,13 +111,10 @@ const HeaderUserbox = () => {
         <MenuUserBox sx={{ minWidth: 210 }} display="flex">
           <Avatar
             variant="rounded"
-            {...stringAvatar(
-              `${currentUser?.firstName} ${currentUser?.lastName}`
-            )}
+            {...stringAvatar(`${currentUser?.fullName}`)}
           />
           <UserBoxText>
-            <UserBoxLabel variant="body1">{`${currentUser?.firstName} ${currentUser?.lastName}`}</UserBoxLabel>
-            <UserBoxDescription variant="body2">{'Admin'}</UserBoxDescription>
+            <UserBoxLabel variant="body1">{currentUser?.fullName}</UserBoxLabel>
           </UserBoxText>
         </MenuUserBox>
         <Divider sx={{ mb: 0 }} />

@@ -13,6 +13,7 @@ const Loader = (Component: any) => (props: any) =>
   );
 
 const Login = Loader(lazy(() => import('src/content/Login')));
+const Register = Loader(lazy(() => import('src/content/Register')));
 const Dashboard = Loader(lazy(() => import('src/content/Dashboard')));
 const Category = Loader(lazy(() => import('src/content/Sections/Category')));
 const Products = Loader(lazy(() => import('src/content/Sections/Products')));
@@ -63,6 +64,10 @@ const routes: any = (isAuthenticated) => [
       {
         path: '/login',
         element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
       },
       {
         path: 'status',

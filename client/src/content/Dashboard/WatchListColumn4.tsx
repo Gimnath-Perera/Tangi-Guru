@@ -27,7 +27,7 @@ function WatchListColumn4({ count }) {
                 fontWeight: '600'
               }}
             >
-              Important Info
+              Game Name 3
             </Typography>
           </Box>
         </Box>

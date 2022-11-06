@@ -17,6 +17,7 @@ export const SET_DETAILED_CHART_DATA = 'SET_DETAILED_CHART_DATA';
 
 //auth actions
 export const USER_LOGIN = 'USER_LOGIN';
+export const USER_REGISTER = 'USER_REGISTER';
 export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 
 //worker actions

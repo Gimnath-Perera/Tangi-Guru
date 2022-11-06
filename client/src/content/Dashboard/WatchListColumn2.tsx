@@ -28,7 +28,7 @@ function WatchListColumn2({ count }) {
                 fontWeight: '600'
               }}
             >
-              Active Farmers
+              Game Name 1
             </Typography>
           </Box>
         </Box>

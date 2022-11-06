@@ -18,9 +18,9 @@ const PageHeader = () => {
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          Welcome, {currentUser?.firstName}!
+          Welcome, {currentUser?.fullName}!
         </Typography>
-        <Typography variant="subtitle2">Lush Produce Services!</Typography>
+        <Typography variant="subtitle2">Improve your kid's brain!</Typography>
       </Grid>
     </Grid>
   );

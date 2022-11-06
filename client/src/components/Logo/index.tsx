@@ -17,7 +17,7 @@ function Logo() {
   return (
     <LogoWrapper to="/overview">
       <Hidden smDown>
-        <img src="/static/images/logo/logo.svg" />
+        <img src="/static/images/logo/logo.svg" style={{ width: '25%' }} />
       </Hidden>
     </LogoWrapper>
   );

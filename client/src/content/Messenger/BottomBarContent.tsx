@@ -51,11 +51,7 @@ function BottomBarContent({ to }) {
   return (
     <Card sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
       <Hidden mdDown>
-        <Avatar
-          {...stringAvatar(
-            `${currentUser?.firstName} ${currentUser?.lastName}`
-          )}
-        />
+        <Avatar {...stringAvatar(`${currentUser?.fullName}`)} />
 
         <DividerWrapper orientation="vertical" flexItem />
       </Hidden>

@@ -28,7 +28,7 @@ function WatchListColumn3({ count }) {
                 fontWeight: '600'
               }}
             >
-              New Applicants
+              Game Name 2
             </Typography>
           </Box>
         </Box>

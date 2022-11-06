@@ -56,7 +56,6 @@ function SidebarContent({ handleChatClick }) {
   const [currentTab, setCurrentTab] = useState<string>('all');
 
   const currentUser = useSelector(({ auth }: RootStateOrAny) => auth.user);
-  console.log('>>===>> >>===>> currentUser', currentUser);
 
   const tabs = [
     { value: 'all', label: 'All' },
@@ -76,9 +75,7 @@ function SidebarContent({ handleChatClick }) {
       <Box display="flex" alignItems="flex-start">
         <Avatar
           variant="rounded"
-          {...stringAvatar(
-            `${currentUser?.firstName} ${currentUser?.lastName}`
-          )}
+          {...stringAvatar(`${currentUser?.fullName}`)}
         />
 
         <Box sx={{ ml: 1.5, flex: 1 }}>
@@ -90,9 +87,6 @@ function SidebarContent({ handleChatClick }) {
             <Box>
               <Typography variant="h5" noWrap>
                 {`${currentUser?.firstName}`}
-              </Typography>
-              <Typography variant="subtitle1" noWrap>
-                {'Admin'}
               </Typography>
             </Box>
 

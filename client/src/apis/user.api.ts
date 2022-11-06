@@ -8,3 +8,12 @@ export const userLoginApi = async (data) => {
     throw error;
   }
 };
+
+export const userRegisterApi = async (data) => {
+  try {
+    const response = await request('POST', `/auth/register`, data);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};

@@ -18,8 +18,9 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-import { userLogin } from '../../store/actions/auth.actions';
+import { userRegister } from '../../store/actions/auth.actions';
 import { Link } from 'react-router-dom';
+import { MOBILE_REGEX } from 'src/constants/common-configurations';
 
 const FormHeaderContainer = styled(Box)(
   ({ theme }) => `
@@ -41,7 +42,7 @@ const SubmitButton = styled(Button)`
   color: #fff;
 `;
 
-const Login = () => {
+const Register = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -54,22 +55,28 @@ const Login = () => {
   const loading = useSelector(({ common }: RootStateOrAny) => common.loading);
   const initialFormValues = {
     email: '',
-    password: ''
+    password: '',
+    fullName: '',
+    phoneNumber: ''
   };
   useEffect(() => {
     isAuthenticated && navigate('/dashboards/overview');
   }, [isAuthenticated]);
 
   const handleOnSubmit = (values) => {
-    dispatch(userLogin(values));
+    dispatch(userRegister(values));
   };
 
-  const userLoginSchema = Yup.object({
+  const userRegisterSchema = Yup.object({
     email: Yup.string()
       .email('Must be a valid email')
       .max(255)
       .required('Email is required'),
-    password: Yup.string().max(255).required('Password is required')
+    password: Yup.string().max(255).required('Password is required'),
+    fullName: Yup.string().max(255).required('Full Name is required'),
+    phoneNumber: Yup.string()
+      .matches(MOBILE_REGEX, 'Phone number is not valid')
+      .required('Phone number is not required')
   });
 
   const handlePasswordVisible = () => {
@@ -88,7 +95,7 @@ const Login = () => {
       <Container maxWidth="sm">
         <Formik
           initialValues={initialFormValues}
-          validationSchema={userLoginSchema}
+          validationSchema={userRegisterSchema}
           onSubmit={(values) => {
             handleOnSubmit(values);
           }}
@@ -105,10 +112,40 @@ const Login = () => {
               <FormHeaderContainer sx={{ mb: 3 }}>
                 <FormSubHeaderSection>
                   <Typography color="#252733" variant="h2" align="center">
-                    Login to dashboard
+                    Create an Account
                   </Typography>
                 </FormSubHeaderSection>
               </FormHeaderContainer>
+
+              <TextField
+                error={Boolean(touched.fullName && errors.fullName)}
+                fullWidth
+                helperText={touched.fullName && errors.fullName}
+                label="Full Name"
+                margin="normal"
+                name="fullName"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                type="text"
+                value={values.fullName}
+                variant="outlined"
+                sx={{ background: '#fff' }}
+              />
+
+              <TextField
+                error={Boolean(touched.phoneNumber && errors.phoneNumber)}
+                fullWidth
+                helperText={touched.phoneNumber && errors.phoneNumber}
+                label="Phone Number"
+                margin="normal"
+                name="phoneNumber"
+                onBlur={handleBlur}
+                onChange={handleChange}
+                type="text"
+                value={values.phoneNumber}
+                variant="outlined"
+                sx={{ background: '#fff' }}
+              />
 
               <TextField
                 error={Boolean(touched.email && errors.email)}
@@ -162,8 +199,8 @@ const Login = () => {
                   py: 2,
                   display: 'flex',
                   justifyContent: 'center',
-                  flexDirection: 'column',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  flexDirection: 'column'
                 }}
               >
                 {loading ? (
@@ -180,7 +217,7 @@ const Login = () => {
                   </SubmitButton>
                 )}
                 <p>
-                  Don't have an account? <Link to="/register">Register</Link>{' '}
+                  Already have an account? <Link to="/login">Login</Link>
                 </p>
               </Box>
             </form>
@@ -190,4 +227,4 @@ const Login = () => {
     </Box>
   );
 };
-export default Login;
+export default Register;

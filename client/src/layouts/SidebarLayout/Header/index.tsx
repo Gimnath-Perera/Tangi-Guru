@@ -34,7 +34,7 @@ function Header() {
 
   return (
     <HeaderWrapper display="flex" alignItems="center">
-      <Box display="flex" alignItems="center" >
+      <Box display="flex" alignItems="center">
         <Hidden lgUp>
           <Logo />
         </Hidden>
