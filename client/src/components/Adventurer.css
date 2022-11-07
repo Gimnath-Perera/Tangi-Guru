@@ -1,0 +1,52 @@
+.bottom-component {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0% 2% 0% 10%;
+}
+
+.containers {
+  display: flex;
+}
+
+.textballoon {
+  width: 300px;
+  height: 100px;
+  transform: scaleX(-1);
+}
+
+.typewriter-text {
+  width: 260px;
+  height: 100px;
+  padding: 12px;
+  position: absolute;
+  font-family: Courier, monospace;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  font-size: 19px;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+.adventurer {
+  display: inline-block;
+  height: 200px;
+  transform: scaleX(-1);
+}
+
+.Typist .Cursor--blinking {
+  opacity: 1;
+  animation: blink 0.75s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
