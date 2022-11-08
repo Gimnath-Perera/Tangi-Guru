@@ -1,48 +1,53 @@
-import tent from "./media/tent.png";
-import car from "./media/car.png";
-import kompas from "./media/kompas.png";
-import world from "./media/world.jpg";
-import bag from "./media/bag.webp";
-import bicycle from "./media/bicycle.png";
-import mountain from "./media/mountain.png";
-import island from "./media/island.png";
-import camel from "./media/camel.png";
+import tent from './media/tent.png';
+import car from './media/car.png';
+import kompas from './media/kompas.png';
+import world from './media/world.jpg';
+import bag from './media/bag.webp';
+import bicycle from './media/bicycle.png';
+import mountain from './media/mountain.png';
+import island from './media/island.png';
+import camel from './media/camel.png';
+import truck from './media/truck.png';
 
 export const words = [
   {
-    word: "tent",
+    word: 'tent',
     url: tent,
   },
   {
-    word: "car",
+    word: 'car',
     url: car,
   },
   {
-    word: "compass",
+    word: 'compass',
     url: kompas,
   },
   {
-    word: "world",
+    word: 'world',
     url: world,
   },
   {
-    word: "bag",
+    word: 'bag',
     url: bag,
   },
   {
-    word: "bicycle",
+    word: 'bicycle',
     url: bicycle,
   },
   {
-    word: "mountain",
+    word: 'mountain',
     url: mountain,
   },
   {
-    word: "island",
+    word: 'island',
     url: island,
   },
   {
-    word: "camel",
+    word: 'camel',
     url: camel,
+  },
+  {
+    word: 'truck',
+    url: truck,
   },
 ];
