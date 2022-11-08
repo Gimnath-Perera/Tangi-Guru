@@ -62,7 +62,10 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
-
+    score: {
+      type: Number,
+      default: 0,
+    },
     games: { type: [{ type: mongoose.SchemaTypes.ObjectId, required: true, ref: 'Game' }] },
   },
   {

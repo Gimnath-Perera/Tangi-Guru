@@ -83,7 +83,9 @@ export const Dashboard = () => {
                 <div class="widget-content-wrapper">
                   <div class="widget-content-left header-user-info" style={{ marginRight: 10 }}>
                     <div class="widget-heading">{user?.fullName}</div>
-                    <div class="widget-subheading">User</div>
+                    <div class="widget-subheading">
+                      <span className="widget-heading">Score:</span> {user?.score}
+                    </div>
                   </div>
                   <div class="widget-content-left">
                     <div class="btn-group">

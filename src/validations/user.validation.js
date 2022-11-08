@@ -21,13 +21,10 @@ const sendEmail = {
 
 const getUsers = {
   query: Joi.object().keys({
-    name: Joi.string(),
-    role: Joi.string(),
     status: Joi.string(),
     sortBy: Joi.string(),
     limit: Joi.number().integer(),
     page: Joi.number().integer(),
-    firstName: Joi.string(),
   }),
 };
 
@@ -45,23 +42,11 @@ const updateUser = {
     .keys({
       email: Joi.string().email(),
       password: Joi.string().custom(password),
-      firstName: Joi.string(),
-      lastName: Joi.string(),
+      fullName: Joi.string(),
       userType: Joi.string(),
       status: Joi.string().valid('Active', 'Pending', 'Reviewing', 'Deactivated'),
       phoneNumber: Joi.string(),
-      address: Joi.string(),
-      farm: Joi.object().keys({
-        nearestMarket: Joi.string().required(),
-        name: Joi.string().required(),
-        postalCode: Joi.string().required(),
-        openTime: Joi.string()
-          .regex(/^([0-9]{2})\:([0-9]{2})$/)
-          .required(),
-        closeTime: Joi.string()
-          .regex(/^([0-9]{2})\:([0-9]{2})$/)
-          .required(),
-      }),
+      score: Joi.number(),
     })
     .min(1),
 };
